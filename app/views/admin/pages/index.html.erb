@@ -6,16 +6,16 @@
   <%= render 'admin/common/menu' %>
   <!-- Left Side Navigation End -->
   <!-- Content -->
-  <div id="wrapper" class="full">
+	<div id="wrapper" class="full">
       <div id="mapView" class="min"><div class="mapPlaceholder"><span class="fa fa-spin fa-spinner"></span> Loading map...</div></div>
       <div id="content" class="max">
           <div class="tables">
-              <h4>廣告橫幅</h4>
+              <h4>文案</h4>
               <div class="panel panel-default">
                   <div class="panel-heading">清單</div>
                   <div class="row tableContainer">
                       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                          <%= link_to new_admin_banner_path, class: :"btn btn-sm btn-yellow mb5" do %>
+                          <%= link_to new_admin_page_path, class: :"btn btn-sm btn-yellow mb5" do %>
                             <span class="fa fa-edit"></span>新增</a>
                           <% end %>
 
@@ -25,17 +25,15 @@
                       <table class="table" id="inboxTable">
                           <thead>
                               <tr>                                  
-                                  <th><span class="fa fa-sort sortIcon"></span><span class="fa fa-caret-up sortIconAsc"></span><span class="fa fa-caret-down sortIconDesc"></span> 橫幅名稱</th>
-                                  <th><span class="fa fa-sort sortIcon"></span><span class="fa fa-caret-up sortIconAsc"></span><span class="fa fa-caret-down sortIconDesc"></span> 圖片</th>
+                                  <th><span class="fa fa-sort sortIcon"></span><span class="fa fa-caret-up sortIconAsc"></span><span class="fa fa-caret-down sortIconDesc"></span> 文案內容</th>
                                   <th><span class="fa fa-sort sortIcon"></span><span class="fa fa-caret-up sortIconAsc"></span><span class="fa fa-caret-down sortIconDesc"></span> 動作</th>
                               </tr>
                           </thead>
                           <tbody class="table">
-                          <% @banners.each do |i| %>
+                          <% @pages.each do |i| %>
                               <tr>
                                   <td><%= i.name %></td>
-                                  <td><%= image_tag i.image_url(:small) %></td>
-                                  <td><%= link_to edit_admin_banner_path(i), class: :"btn btn-sm btn-blue mb5" do %>
+                                  <td><%= link_to edit_admin_page_path, class: :"btn btn-sm btn-blue mb5" do %>
                                       <span class="fa fa-edit"></span>編輯</a>
                                       <% end %>
                                   </td>

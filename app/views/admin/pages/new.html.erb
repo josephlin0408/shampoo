@@ -1,0 +1,32 @@
+<body class="notransition">
+  <!-- Header -->
+  <%= render 'admin/common/header' %>
+  <!-- Header End -->
+  <!-- Left Side Navigation -->    
+  <%= render 'admin/common/menu' %>
+  <!-- Left Side Navigation End -->
+  <!-- Content -->
+	<div id="wrapper" class="full">
+	  <div id="mapView" class="min"><div class="mapPlaceholder"><span class="fa fa-spin fa-spinner"></span> Loading map...</div></div>
+	  <div id="content" class="max">
+	    <div class="tables">
+	      <h4>新增文案</h4>      
+	      <div class="row">
+	        <div class="col-xs-12">
+	          <div class="panel panel-default">	            
+	            <div class="panel-body">
+	              <%= bootstrap_form_for @page, url: admin_pages_path(@page) do |n| %>
+	                <div class="form-group">
+	                	<%= n.text_area :content, :class => "redactor", :rows => 40, :cols => 120 %>
+	                </div>  
+	              <% end %>                                    
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="clearfix"></div>
+	</div>
+  <!-- Content End-->
+</body>

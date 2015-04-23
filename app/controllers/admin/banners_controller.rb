@@ -1,4 +1,4 @@
-class Admin::BannersController < ApplicationController
+class Admin::BannersController < Admin::BaseController
 	def index
 		@banners = Banner.all
 	end
@@ -13,6 +13,19 @@ class Admin::BannersController < ApplicationController
 			redirect_to admin_banners_path
 		else
 			render :new
+		end
+	end
+
+	def edit
+		@banner = Banner.find(params[:id])
+	end
+
+	def update
+		@banner = Banner.find(params[:id])
+		if @banner.update(banner_params)
+			redirect_to admin_banners_path
+		else
+			render :edit
 		end
 	end
 

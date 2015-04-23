@@ -11,7 +11,11 @@
                 <span class="navIcon icon-compass"></span><span class="navLabel">橫幅管理</span>
               <% end %>
             </li>
-            <li><a href="single.html"><span class="navIcon icon-home"></span><span class="navLabel">Single</span></a></li>
+            <li>
+              <%= link_to admin_pages_path do %>
+                <span class="navIcon icon-compass"></span><span class="navLabel">文案管理</span>
+              <% end %>
+            </li>
             <li><a href="add.html"><span class="navIcon icon-plus"></span><span class="navLabel">New</span></a></li>
             <li class="hasSub">
                 <a href="#"><span class="navIcon icon-drop"></span><span class="navLabel">Colors</span><span class="fa fa-angle-left arrowRight"></span><span class="badge bg-yellow">5</span></a>
