@@ -16,8 +16,12 @@
 	          <div class="panel panel-default">	            
 	            <div class="panel-body">
 	              <%= bootstrap_form_for @page, url: admin_pages_path(@page) do |n| %>
-	                <div class="form-group">
-	                	<%= n.text_area :content, :class => "redactor", :rows => 40, :cols => 120 %>
+	              	<div class="form-group">
+	              		<%= n.submit '送出', class: :"btn btn-round btn-green" %>
+	              		<%= link_to('返回', admin_pages_path, class: :"btn btn-round btn-green") %>
+	              	</div>
+	                <div class="form-group">	                	
+  									<%= n.cktext_area :content, :ckeditor => {:language => 'uk'}, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'}  %>
 	                </div>  
 	              <% end %>                                    
 	            </div>
